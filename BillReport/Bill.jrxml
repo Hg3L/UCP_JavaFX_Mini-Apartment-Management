@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Bill" pageWidth="420" pageHeight="595" columnWidth="380" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ced95029-b569-4027-895c-af2843a4e088">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="HgLDATABASE"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="022e3e4d-b96e-4406-8aff-f55886ad1037">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ConnectAdapter"/>
+		<queryString language="SQL">
+			<![CDATA[select dichvu.tenDV , dichvu.giaDV from dichvu inner join hoadontmp on dichvu.MaT = hoadontmp.MaT]]>
+		</queryString>
+		<field name="tenDV" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="tenDV"/>
+			<property name="com.jaspersoft.studio.field.label" value="tenDV"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="dichvu"/>
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="giaDV" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="giaDV"/>
+			<property name="com.jaspersoft.studio.field.label" value="giaDV"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="dichvu"/>
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="DatasetMain" uuid="8d2440d0-6f9a-4b61-8c56-89f259933aa1">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="HgLDATABASE"/>
+		<queryString language="SQL">
+			<![CDATA[select * from dichvu, toanha where toanha.MaT = dichvu.MaT]]>
+		</queryString>
+		<field name="MaDV" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="MaDV"/>
+			<property name="com.jaspersoft.studio.field.label" value="MaDV"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="dichvu"/>
+		</field>
+		<field name="MaT" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="MaT"/>
+			<property name="com.jaspersoft.studio.field.label" value="MaT"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="dichvu"/>
+		</field>
+		<field name="TenDV" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="TenDV"/>
+			<property name="com.jaspersoft.studio.field.label" value="TenDV"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="dichvu"/>
+		</field>
+		<field name="LoaiDV" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="LoaiDV"/>
+			<property name="com.jaspersoft.studio.field.label" value="LoaiDV"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="dichvu"/>
+		</field>
+		<field name="GiaDV" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="GiaDV"/>
+			<property name="com.jaspersoft.studio.field.label" value="GiaDV"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="dichvu"/>
+		</field>
+		<field name="COLUMN_6" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="MaT"/>
+			<property name="com.jaspersoft.studio.field.label" value="MaT"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="toanha"/>
+		</field>
+		<field name="DiaChi" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="DiaChi"/>
+			<property name="com.jaspersoft.studio.field.label" value="DiaChi"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="toanha"/>
+		</field>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[select * from inhoadon inner join dichvu on
+inhoadon.MaT = dichvu.MaT inner join khachthue on
+inhoadon.MaK = khachthue.MaK inner join phong on 
+inhoadon.MaP = phong.MaP]]>
+	</queryString>
+	<field name="MaHD" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="MaHD"/>
+		<property name="com.jaspersoft.studio.field.label" value="MaHD"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="inhoadon"/>
+	</field>
+	<field name="ID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="inhoadon"/>
+	</field>
+	<field name="MaT" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MaT"/>
+		<property name="com.jaspersoft.studio.field.label" value="MaT"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="inhoadon"/>
+	</field>
+	<field name="MaP" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MaP"/>
+		<property name="com.jaspersoft.studio.field.label" value="MaP"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="inhoadon"/>
+	</field>
+	<field name="MaK" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MaK"/>
+		<property name="com.jaspersoft.studio.field.label" value="MaK"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="inhoadon"/>
+	</field>
+	<field name="SoDien" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="SoDien"/>
+		<property name="com.jaspersoft.studio.field.label" value="SoDien"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="inhoadon"/>
+	</field>
+	<field name="NgayXuatHD" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="NgayXuatHD"/>
+		<property name="com.jaspersoft.studio.field.label" value="NgayXuatHD"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="inhoadon"/>
+	</field>
+	<field name="TongTien" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="TongTien"/>
+		<property name="com.jaspersoft.studio.field.label" value="TongTien"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="inhoadon"/>
+	</field>
+	<field name="MaDV" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MaDV"/>
+		<property name="com.jaspersoft.studio.field.label" value="MaDV"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="dichvu"/>
+	</field>
+	<field name="COLUMN_10" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MaT"/>
+		<property name="com.jaspersoft.studio.field.label" value="MaT"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="dichvu"/>
+	</field>
+	<field name="TenDV" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TenDV"/>
+		<property name="com.jaspersoft.studio.field.label" value="TenDV"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="dichvu"/>
+	</field>
+	<field name="LoaiDV" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LoaiDV"/>
+		<property name="com.jaspersoft.studio.field.label" value="LoaiDV"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="dichvu"/>
+	</field>
+	<field name="GiaDV" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="GiaDV"/>
+		<property name="com.jaspersoft.studio.field.label" value="GiaDV"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="dichvu"/>
+	</field>
+	<field name="COLUMN_14" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MaK"/>
+		<property name="com.jaspersoft.studio.field.label" value="MaK"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="khachthue"/>
+	</field>
+	<field name="COLUMN_15" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MaP"/>
+		<property name="com.jaspersoft.studio.field.label" value="MaP"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="khachthue"/>
+	</field>
+	<field name="COLUMN_16" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MaT"/>
+		<property name="com.jaspersoft.studio.field.label" value="MaT"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="khachthue"/>
+	</field>
+	<field name="TenK" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TenK"/>
+		<property name="com.jaspersoft.studio.field.label" value="TenK"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="khachthue"/>
+	</field>
+	<field name="GioiTinh" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="GioiTinh"/>
+		<property name="com.jaspersoft.studio.field.label" value="GioiTinh"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="khachthue"/>
+	</field>
+	<field name="NgaySinh" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="NgaySinh"/>
+		<property name="com.jaspersoft.studio.field.label" value="NgaySinh"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="khachthue"/>
+	</field>
+	<field name="CCCD" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CCCD"/>
+		<property name="com.jaspersoft.studio.field.label" value="CCCD"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="khachthue"/>
+	</field>
+	<field name="SDT" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="SDT"/>
+		<property name="com.jaspersoft.studio.field.label" value="SDT"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="khachthue"/>
+	</field>
+	<field name="Que" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Que"/>
+		<property name="com.jaspersoft.studio.field.label" value="Que"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="khachthue"/>
+	</field>
+	<field name="NgayThue" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="NgayThue"/>
+		<property name="com.jaspersoft.studio.field.label" value="NgayThue"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="khachthue"/>
+	</field>
+	<field name="COLUMN_24" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MaP"/>
+		<property name="com.jaspersoft.studio.field.label" value="MaP"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="phong"/>
+	</field>
+	<field name="COLUMN_25" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MaT"/>
+		<property name="com.jaspersoft.studio.field.label" value="MaT"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="phong"/>
+	</field>
+	<field name="LoaiP" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LoaiP"/>
+		<property name="com.jaspersoft.studio.field.label" value="LoaiP"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="phong"/>
+	</field>
+	<field name="TrangThai" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="TrangThai"/>
+		<property name="com.jaspersoft.studio.field.label" value="TrangThai"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="phong"/>
+	</field>
+	<field name="GiaP" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="GiaP"/>
+		<property name="com.jaspersoft.studio.field.label" value="GiaP"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="phong"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="510" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="50" y="90" width="300" height="62" uuid="1a652692-054a-40f3-ade5-68d8da36626d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="35"/>
+				</textElement>
+				<text><![CDATA[Hóa đơn tiền phòng]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="5" width="90" height="20" uuid="982aab6d-0370-44b9-90ed-4f709a1ad14a"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mã lập phiếu:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="383" y="4" width="26" height="22" uuid="48babd68-c6c7-4e14-980b-9b8e285d8c63"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="139" y="152" width="110" height="22" uuid="ce648fc4-6bff-43f9-9bb2-2a832179701a"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NgayXuatHD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="210" width="108" height="22" uuid="adfb0623-a7c2-4ac7-a7d9-f9df8258ee8e"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MaP}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="210" width="48" height="30" uuid="a115227d-debe-41c8-b9b6-4720cf43f5a3"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Phòng:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="180" width="118" height="30" uuid="04fd9b0d-58cf-47b6-bd71-f99fc6fee22b"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tên khách hàng:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="160" y="180" width="110" height="22" uuid="77f154c4-ffb8-4bd0-944c-8518b256baff"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TenK}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="240" width="88" height="30" uuid="54b78c8a-1c29-4bec-b0fc-c652983eff31"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tiền phòng:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="240" width="70" height="22" uuid="b86d97b5-299a-4874-8aed-5671a5d8730c"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{GiaP} +" VNĐ"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="190" y="480" width="70" height="30" uuid="5d5d5f19-d537-4c06-9231-82bc4e64ef75"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tổng tiền:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="256" y="480" width="120" height="22" uuid="7ce8c1d6-c861-4991-b055-9f323a37f93b"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TongTien} +" VNĐ"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="50" y="306" width="290" height="1" uuid="d48fcc8e-96a2-42f5-85c0-ee9edacaaf43"/>
+			</line>
+			<componentElement>
+				<reportElement x="94" y="316" width="201" height="60" uuid="fd138fec-53bb-46f1-8962-d502f51cdc6e">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="DatasetMain" uuid="4206fec9-fbc4-4926-af41-55d8ef415642">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="100" uuid="1c57db84-1741-470a-9f86-6910a097beda">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="30" uuid="ee1428d5-d82b-4f4e-89ee-9b532a053097"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="14" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Tên dịch vụ]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="100" height="30" uuid="d245fd21-db87-4bf2-b77e-05e0a5eaebd0"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="14"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{TenDV}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100" uuid="b23bdd81-5e27-4654-bc45-6a17ad38ee99">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="30" uuid="7b276b08-45bf-4f1e-a89c-97ee7ffc24cb"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="14" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Giá dịch vụ]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="100" height="30" uuid="fa1c328f-04ec-49bf-a449-29223123d29e"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="14"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{GiaDV}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<image>
+				<reportElement x="-11" y="-10" width="50" height="50" uuid="662d9791-3686-4240-b866-84d1072ec995"/>
+				<imageExpression><![CDATA["miniApartment.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="50" y="270" width="100" height="30" uuid="1382138f-becb-47ae-bbde-bb11b94d6aba"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Số điện sử dụng:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="155" y="270" width="70" height="22" uuid="6ae0fbb5-59be-4ac3-a223-4ad294db9493"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SoDien}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
